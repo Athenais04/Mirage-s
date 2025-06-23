@@ -3,8 +3,9 @@ from dotenv import load_dotenv
 import discord
 from discord.ext import commands
 import sys
-print("Python version:", sys.version)
+from keep_alive import keep_alive  # importe ta fonction keep_alive
 
+print("Python version:", sys.version)
 
 load_dotenv()
 
@@ -35,3 +36,7 @@ async def on_member_update(before, after):
                 await channel.send(f"{staff_role.mention} : {after.mention} a reçu le rôle **{ROLE_NAME_TO_WATCH}** !")
 
 token = os.getenv("DISCORD_BOT_TOKEN")
+
+if __name__ == "__main__":
+    keep_alive()  # démarre Flask en thread séparé pour UptimeRobot
+    bot.run(token)
