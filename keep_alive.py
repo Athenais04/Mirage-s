@@ -7,7 +7,7 @@ app = Flask('')
 def home():
   return "Le bot est en ligne !"
 
-def run ():
+def run():
   app.run (host='0.0.0.0', port=8080)
 
 def keep_alive():
