@@ -2,6 +2,9 @@ import os
 from dotenv import load_dotenv
 import discord
 from discord.ext import commands
+import sys
+print("Python version:", sys.version)
+
 
 load_dotenv()
 
