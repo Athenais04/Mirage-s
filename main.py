@@ -1,5 +1,9 @@
+import os
+from dotenv import load_dotenv
 import discord
 from discord.ext import commands
+
+load_dotenv()
 
 intents = discord.Intents.default()
 intents.members = True
@@ -27,4 +31,4 @@ async def on_member_update(before, after):
             if channel and staff_role:
                 await channel.send(f"{staff_role.mention} : {after.mention} a reçu le rôle **{ROLE_NAME_TO_WATCH}** !")
 
-bot.run(os.getenv("DISCORD_BOT_TOKEN"))
+token = os.getenv("DISCORD_BOT_TOKEN")
